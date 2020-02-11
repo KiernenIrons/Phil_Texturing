@@ -34,6 +34,30 @@ void Game::run()
 
 }
 
+std::string Game::shaderFile(std::string t_filePath)
+{
+	std::string fileStuff;
+	std::string line;
+	std::ifstream reading(t_filePath);
+
+	if (reading.is_open())
+	{
+		while (std::getline(reading, line))
+		{
+			fileStuff += line;
+			fileStuff += "\n";
+			std::cout << "Doing Things" << std::endl;
+		}
+	}
+	else
+	{
+		std::cout << "Error loading file: " + t_filePath << std::endl;
+	}
+
+	reading.close();
+	return fileStuff;
+}
+
 typedef struct
 {
 	float coordinate[3];
@@ -215,131 +239,131 @@ void Game::initialize()
 
 
 
-	//// Front Face
-	//vertex[0].color[0] = 1.0f;
-	//vertex[0].color[1] = 0.0f;
-	//vertex[0].color[2] = 0.0f;
-	//vertex[0].color[3] = 1.0f;
+	// Front Face
+	vertex[0].color[0] = 1.0f;
+	vertex[0].color[1] = 0.0f;
+	vertex[0].color[2] = 0.0f;
+	vertex[0].color[3] = 1.0f;
 
-	//vertex[1].color[0] = 1.0f;
-	//vertex[1].color[1] = 0.0f;
-	//vertex[1].color[2] = 0.0f;
-	//vertex[1].color[3] = 1.0f;
+	vertex[1].color[0] = 1.0f;
+	vertex[1].color[1] = 0.0f;
+	vertex[1].color[2] = 0.0f;
+	vertex[1].color[3] = 1.0f;
 
-	//vertex[2].color[0] = 1.0f;
-	//vertex[2].color[1] = 0.0f;
-	//vertex[2].color[2] = 0.0f;
-	//vertex[2].color[3] = 1.0f;
+	vertex[2].color[0] = 1.0f;
+	vertex[2].color[1] = 0.0f;
+	vertex[2].color[2] = 0.0f;
+	vertex[2].color[3] = 1.0f;
 
-	//vertex[3].color[0] = 1.0f;
-	//vertex[3].color[1] = 0.0f;
-	//vertex[3].color[2] = 0.0f;
-	//vertex[3].color[3] = 1.0f;
+	vertex[3].color[0] = 1.0f;
+	vertex[3].color[1] = 0.0f;
+	vertex[3].color[2] = 0.0f;
+	vertex[3].color[3] = 1.0f;
 
-	//// Other Face
-	//vertex[4].color[0] = 0.0f;
-	//vertex[4].color[1] = 1.0f;
-	//vertex[4].color[2] = 0.0f;
-	//vertex[4].color[3] = 1.0f;
+	// Other Face
+	vertex[4].color[0] = 1.0f;
+	vertex[4].color[1] = 0.0f;
+	vertex[4].color[2] = 0.0f;
+	vertex[4].color[3] = 1.0f;
 
-	//vertex[5].color[0] = 0.0f;
-	//vertex[5].color[1] = 1.0f;
-	//vertex[5].color[2] = 0.0f;
-	//vertex[5].color[3] = 0.0f;
+	vertex[5].color[0] = 1.0f;
+	vertex[5].color[1] = 0.0f;
+	vertex[5].color[2] = 0.0f;
+	vertex[5].color[3] = 1.0f;
 
-	//vertex[6].color[0] = 0.0f;
-	//vertex[6].color[1] = 1.0f;
-	//vertex[6].color[2] = 0.0f;
-	//vertex[6].color[3] = 0.0f;
+	vertex[6].color[0] = 1.0f;
+	vertex[6].color[1] = 0.0f;
+	vertex[6].color[2] = 0.0f;
+	vertex[6].color[3] = 1.0f;
 
-	//vertex[7].color[0] = 0.0f;
-	//vertex[7].color[1] = 1.0f;
-	//vertex[7].color[2] = 0.0f;
-	//vertex[7].color[3] = 0.0f;
+	vertex[7].color[0] = 1.0f;
+	vertex[7].color[1] = 0.0f;
+	vertex[7].color[2] = 0.0f;
+	vertex[7].color[3] = 1.0f;
 
-	//// Also Another Face
-	//vertex[8].color[0] = 0.0f;
-	//vertex[8].color[1] = 0.0f;
-	//vertex[8].color[2] = 1.0f;
-	//vertex[8].color[3] = 0.0f;
+	// Also Another Face
+	vertex[8].color[0] = 1.0f;
+	vertex[8].color[1] = 0.0f;
+	vertex[8].color[2] = 0.0f;
+	vertex[8].color[3] = 1.0f;
 
-	//vertex[9].color[0] = 0.0f;
-	//vertex[9].color[1] = 0.0f;
-	//vertex[9].color[2] = 1.0f;
-	//vertex[9].color[3] = 0.0f;
+	vertex[9].color[0] = 1.0f;
+	vertex[9].color[1] = 0.0f;
+	vertex[9].color[2] = 0.0f;
+	vertex[9].color[3] = 1.0f;
 
-	//vertex[10].color[0] = 0.0f;
-	//vertex[10].color[1] = 0.0f;
-	//vertex[10].color[2] = 1.0f;
-	//vertex[10].color[3] = 0.0f;
+	vertex[10].color[0] = 1.0f;
+	vertex[10].color[1] = 0.0f;
+	vertex[10].color[2] = 0.0f;
+	vertex[10].color[3] = 1.0f;
 
-	//vertex[11].color[0] = 0.0f;
-	//vertex[11].color[1] = 0.0f;
-	//vertex[11].color[2] = 1.0f;
-	//vertex[11].color[3] = 0.0f;
+	vertex[11].color[0] = 1.0f;
+	vertex[11].color[1] = 0.0f;
+	vertex[11].color[2] = 0.0f;
+	vertex[11].color[3] = 1.0f;
 
-	//// Again Another Face
-	//vertex[12].color[0] = 1.0f;
-	//vertex[12].color[1] = 0.0f;
-	//vertex[12].color[2] = 1.0f;
-	//vertex[12].color[3] = 0.0f;
+	// Again Another Face
+	vertex[12].color[0] = 1.0f;
+	vertex[12].color[1] = 0.0f;
+	vertex[12].color[2] = 0.0f;
+	vertex[12].color[3] = 1.0f;
 
-	//vertex[13].color[0] = 1.0f;
-	//vertex[13].color[1] = 0.0f;
-	//vertex[13].color[2] = 1.0f;
-	//vertex[13].color[3] = 0.0f;
+	vertex[13].color[0] = 1.0f;
+	vertex[13].color[1] = 0.0f;
+	vertex[13].color[2] = 0.0f;
+	vertex[13].color[3] = 1.0f;
 
-	//vertex[14].color[0] = 1.0f;
-	//vertex[14].color[1] = 0.0f;
-	//vertex[14].color[2] = 1.0f;
-	//vertex[14].color[3] = 0.0f;
+	vertex[14].color[0] = 1.0f;
+	vertex[14].color[1] = 0.0f;
+	vertex[14].color[2] = 0.0f;
+	vertex[14].color[3] = 1.0f;
 
-	//vertex[15].color[0] = 1.0f;
-	//vertex[15].color[1] = 0.0f;
-	//vertex[15].color[2] = 1.0f;
-	//vertex[15].color[3] = 0.0f;
+	vertex[15].color[0] = 1.0f;
+	vertex[15].color[1] = 0.0f;
+	vertex[15].color[2] = 0.0f;
+	vertex[15].color[3] = 1.0f;
 
-	//// Oh Look Another Face
-	//vertex[16].color[0] = 1.0f;
-	//vertex[16].color[1] = 0.5f;
-	//vertex[16].color[2] = 0.0f;
-	//vertex[16].color[3] = 0.0f;
+	// Oh Look Another Face
+	vertex[16].color[0] = 1.0f;
+	vertex[16].color[1] = 0.0f;
+	vertex[16].color[2] = 0.0f;
+	vertex[16].color[3] = 1.0f;
 
-	//vertex[17].color[0] = 1.0f;
-	//vertex[17].color[1] = 0.5f;
-	//vertex[17].color[2] = 0.0f;
-	//vertex[17].color[3] = 0.0f;
+	vertex[17].color[0] = 1.0f;
+	vertex[17].color[1] = 0.0f;
+	vertex[17].color[2] = 0.0f;
+	vertex[17].color[3] = 1.0f;
 
-	//vertex[18].color[0] = 1.0f;
-	//vertex[18].color[1] = 0.5f;
-	//vertex[18].color[2] = 0.0f;
-	//vertex[18].color[3] = 0.0f;
+	vertex[18].color[0] = 1.0f;
+	vertex[18].color[1] = 0.0f;
+	vertex[18].color[2] = 0.0f;
+	vertex[18].color[3] = 1.0f;
 
-	//vertex[19].color[0] = 1.0f;
-	//vertex[19].color[1] = 0.5f;
-	//vertex[19].color[2] = 0.0f;
-	//vertex[19].color[3] = 0.0f;
+	vertex[19].color[0] = 1.0f;
+	vertex[19].color[1] = 0.0f;
+	vertex[19].color[2] = 0.0f;
+	vertex[19].color[3] = 1.0f;
 
-	//// No Way, Come Look At This, It's Another Face
-	//vertex[20].color[0] = 1.0f;
-	//vertex[20].color[1] = 1.0f;
-	//vertex[20].color[2] = 1.0f;
-	//vertex[20].color[3] = 0.0f;
+	// No Way, Come Look At This, It's Another Face
+	vertex[20].color[0] = 1.0f;
+	vertex[20].color[1] = 0.0f;
+	vertex[20].color[2] = 0.0f;
+	vertex[20].color[3] = 1.0f;
 
-	//vertex[21].color[0] = 0.5f;
-	//vertex[21].color[1] = 0.5f;
-	//vertex[21].color[2] = 1.0f;
-	//vertex[21].color[3] = 0.0f;
+	vertex[21].color[0] = 1.0f;
+	vertex[21].color[1] = 0.0f;
+	vertex[21].color[2] = 0.0f;
+	vertex[21].color[3] = 1.0f;
 
-	//vertex[22].color[0] = 0.5f;
-	//vertex[22].color[1] = 0.5f;
-	//vertex[22].color[2] = 1.0f;
-	//vertex[22].color[3] = 0.0f;
+	vertex[22].color[0] = 1.0f;
+	vertex[22].color[1] = 0.0f;
+	vertex[22].color[2] = 0.0f;
+	vertex[22].color[3] = 1.0f;
 
-	//vertex[23].color[0] = 0.5f;
-	//vertex[23].color[1] = 0.5f;
-	//vertex[23].color[2] = 1.0f;
-	//vertex[23].color[3] = 0.0f;     Removed because I dont like the look of it
+	vertex[23].color[0] = 1.0f;
+	vertex[23].color[1] = 0.0f;
+	vertex[23].color[2] = 0.0f;
+	vertex[23].color[3] = 1.0f;  
 
 
 
@@ -456,17 +480,10 @@ void Game::initialize()
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
 	/* Vertex Shader which would normally be loaded from an external file */
-	const char* vs_src = "#version 400\n\r"
-		"in vec4 sv_position;"
-		"in vec4 sv_color;"
-		"in vec2 sv_texel;"
-		"out vec4 color;"
-		"out vec2 texel;"
-		"void main() {"
-		"	color = sv_color;"
-		"	texel = sv_texel;"
-		"	gl_Position = sv_position;"
-		"}"; //Vertex Shader Src
+	std::string vtxshader = shaderFile(std::string("vtxshader.txt"));
+
+	//Vertex Shader Src
+	const char* vs_src = &vtxshader[0];
 
 	DEBUG_MSG("Setting Up Vertex Shader");
 
@@ -486,16 +503,11 @@ void Game::initialize()
 		DEBUG_MSG("ERROR: Vertex Shader Compilation Error");
 	}
 
-	/* Fragment Shader which would normally be loaded from an external file */
-	const char* fs_src = "#version 400\n\r"
-		"uniform sampler2D f_texture;"
-		"in vec4 color;"
-		"in vec2 texel;"
-		"out vec4 fColor;"
-		"void main() {"
-		//"	fColor = vec4(0.0f, 1.0f, 0.0f, 1.0f);"
-		"	fColor = color + texture(f_texture, texel.st);"
-		"}"; //Fragment Shader Src
+	// Fragment Shader which would normally be loaded from an external file 
+	std::string frgshader = shaderFile(std::string("frgshader.txt"));
+
+	//Fragment Shader Src
+	const char* fs_src = &frgshader[0];
 
 	DEBUG_MSG("Setting Up Fragment Shader");
 
@@ -758,7 +770,7 @@ void Game::render()
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+	glClearColor(0.0f, 1.0f, 0.0f, 0.0f);
 
 	glBindBuffer(GL_ARRAY_BUFFER, vbo[0]);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, index);

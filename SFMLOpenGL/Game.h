@@ -14,6 +14,7 @@
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
+#include <fstream>
 
 using namespace std;
 
@@ -30,6 +31,8 @@ private:
 	void update();
 	void render();
 	void unload();
+
+	std::string shaderFile(std::string t_filePath);
 
 	sf::Clock clock;
 	sf::Time elapsed;
